@@ -1,10 +1,18 @@
 const getConfig = require('probot-config')
 const createScheduler = require('probot-scheduler')
 const Stale = require('./lib/stale')
+const request = require('request-promise-native')
 
 module.exports = async robot => {
   // Visit all repositories to mark and sweep stale issues
   const scheduler = createScheduler(robot)
+
+  // To keep the heroku site up
+  setInterval(async () => {
+    res = await request({
+      url: 'http://quintype-stale.herokuapp.com'
+    });
+  }, 10*60*1000);
 
   // Unmark stale issues if a user comments
   const events = [
