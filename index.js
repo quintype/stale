@@ -50,7 +50,6 @@ module.exports = async robot => {
 
   async function forRepository (context) {
     let config = await getConfig(context, 'quintype-stale.yml')
-
     if (!config) {
       scheduler.stop(context.payload.repository)
       // Don't actually perform for repository without a config
