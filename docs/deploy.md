@@ -12,4 +12,4 @@ This plugin requires these **Permissions & events** for the GitHub App:
   - [x] Check the box for **Pull request review** events
   - [x] Check the box for **Pull request review comment** events
 - Single File - **Read-only**
-  - Path: `.github/stale.yml`
+  - Path: `.github/quintype-stale.yml`

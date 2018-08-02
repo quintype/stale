@@ -49,7 +49,7 @@ module.exports = async robot => {
   }
 
   async function forRepository (context) {
-    let config = await getConfig(context, 'stale.yml')
+    let config = await getConfig(context, 'quintype-stale.yml')
 
     if (!config) {
       scheduler.stop(context.payload.repository)
